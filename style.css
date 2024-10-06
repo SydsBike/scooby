@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "PulpFiction";
+  src: url("./fonts/scoobydoo.ttf");
+}
+
+body {
+  background-image: url("./pics/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+img {
+  margin: 2px;
+  width: 100%;
+  height: auto;
+}
+
+h2 {
+  color: goldenrod;
+  margin: auto 0;
+}
+.container {
+  font-family: "PulpFiction";
+  letter-spacing: 0.3125rem;
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: purple;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+h1 {
+  -webkit-text-stroke-width: 0.025px;
+  -webkit-text-stroke-color: yellow;
+}
+
+#game {
+  display: grid;
+  grid-template: repeat(3, 16.5rem) / repeat(6, 10rem);
+  gap: 0.625rem;
+}
+
+.card {
+  box-shadow: 0 0.1875rem 0.625rem rgba(200, 200, 200, 0.9);
+  border-radius: 0.625rem;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  background-color: black;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.front {
+  background-image: url("./pics/card.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rotated {
+  transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 568px) {
+  .container {
+    font-family: "PulpFiction";
+    letter-spacing: 0.3125rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #game {
+    display: grid;
+    grid-template: repeat(4, 8.5rem) / repeat(3, 5.5rem);
+    gap: 0.625rem;
+    justify-content: center;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: goldenrod;
+    padding-bottom: 9px;
+  }
+  h2 {
+    color: goldenrod;
+    letter-spacing: 0.5px;
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+  .container {
+    font-family: "PulpFiction";
+    letter-spacing: 0.3125rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #game {
+    display: grid;
+    grid-template: repeat(2, 8.5rem) / repeat(6, 5.5rem);
+    gap: 0.625rem;
+    justify-content: center;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: goldenrod;
+    padding-bottom: 9px;
+  }
+  h2 {
+    color: goldenrod;
+    letter-spacing: 0.5px;
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
